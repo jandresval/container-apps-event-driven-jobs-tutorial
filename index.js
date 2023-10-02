@@ -24,6 +24,8 @@ async function main() {
 
     // 2. Process the message here
 
+    setTimeout('', 8000);
+
     // 3. Delete the message from the queue
     await queueClient.deleteMessage(message.messageId, message.popReceipt);
     console.log("Message processed");
