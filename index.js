@@ -26,7 +26,7 @@ async function main() {
 
     // 2. Process the message here
 
-    await delay(8000);
+    await delay(200000);
 
     console.log(`Processing message: wow`);
 
