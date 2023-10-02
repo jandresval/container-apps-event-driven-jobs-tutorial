@@ -4,6 +4,8 @@ const { QueueClient, QueueServiceClient } = require("@azure/storage-queue");
 const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
 const queueName = process.env.AZURE_STORAGE_QUEUE_NAME;
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 async function main() {
     const queueServiceClient = QueueServiceClient.fromConnectionString(connectionString);
     const queueClient = queueServiceClient.getQueueClient(queueName);
@@ -24,7 +26,7 @@ async function main() {
 
     // 2. Process the message here
 
-    setTimeout('', 8000);
+    await delay(8000);
 
     console.log(`Processing message: wow`);
 
