@@ -26,10 +26,6 @@ async function main() {
 
     // 2. Process the message here
 
-    await delay(200000);
-
-    console.log(`Processing message: wow 3`);
-
     // 3. Delete the message from the queue
     await queueClient.deleteMessage(message.messageId, message.popReceipt);
     console.log("Message processed");
